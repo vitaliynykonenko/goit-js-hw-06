@@ -9,11 +9,12 @@
 const textInput = document.querySelector("#validation-input");
     textInput.onblur = function () {
       console.log(this.value.length);
-      if (this.getAttribute("data-length") > this.value.length) {
-        this.classList.remove("valid");
-        this.classList.add("invalid");
-      } else {
-        this.classList.remove("invalid");
+  
+      if (this.getAttribute("data-length") == this.value.length) {
         this.classList.add("valid");
+        this.classList.remove("invalid");
+      } else {
+        this.classList.add("invalid");
+        this.classList.remove("valid");
       }
     };

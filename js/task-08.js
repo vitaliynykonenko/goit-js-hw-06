@@ -12,16 +12,22 @@ const form = document.querySelector(".login-form");
 form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(evt) {
+  // запобігає перезавантаженню сторінки за замовчуванням
   evt.preventDefault();
+
   const {
     elements: { email, password },
   } = evt.currentTarget;
 
   if (email.value === "" || password.value === "") {
-    return console.log("Please fill in all the fields!");
+    return alert("Please fill in all the fields!");
   }
 
-  console.log(`Email: ${email.value}, Password: ${password.value}`);
+  const user = { Email: email.value, Password: password.value };
+
+  console.log(user);
+  
   evt.currentTarget.reset();
 }
+
 
